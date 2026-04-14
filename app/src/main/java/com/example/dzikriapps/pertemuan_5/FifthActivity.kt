@@ -43,6 +43,13 @@ class FifthActivity : AppCompatActivity() {
         binding.btnTop.setOnClickListener {
             binding.nestedScrollView.smoothScrollTo(0, 0)
         }
+        binding.nestedScrollView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
+            if (scrollY > 100) {
+                supportActionBar?.title = "Sudah Scroll"
+            } else {
+                supportActionBar?.title = "Activity Fifth"
+            }
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
