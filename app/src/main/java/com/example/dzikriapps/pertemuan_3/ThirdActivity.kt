@@ -2,6 +2,7 @@ package com.example.dzikriapps.pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -38,6 +39,25 @@ class ThirdActivity : AppCompatActivity() {
             //pindah halaman dari ThirdActivity ke ThirdResultActivity
             val intent = Intent(this, ThirdResultActivity::class.java)
             startActivity(intent)
+        }
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Third"
+            subtitle = "Ini adalah activity P3"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

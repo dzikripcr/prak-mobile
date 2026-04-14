@@ -3,6 +3,7 @@ package com.example.dzikriapps.pertemuan_4
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -66,6 +67,27 @@ class FourthActivity : AppCompatActivity() {
         Log.e("Data Intent == ","Nama: $name , Usia: $age, Asal: $from")
 
         Log.e("onCreate", "FourthActivity dibuat pertama kali")
+
+        //menerapkan toolbar
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Fourth"
+            subtitle = "Ini adalah activity P4"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+    }
+
+    //menerapkan logic tombol back
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onStart() {
