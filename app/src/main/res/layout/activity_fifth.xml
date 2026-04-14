@@ -20,11 +20,12 @@
             android:background="?attr/colorPrimary"
             app:subtitleTextColor="@android:color/white"
             app:titleTextColor="@android:color/white"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_scrollFlags="scroll|enterAlways"/>
+            app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -44,9 +45,11 @@
 
             <Button
                 android:id="@+id/btnWebView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="Web View"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"/>
 
             <!-- Tambahkan konten panjang supaya bisa di-scroll -->
             <TextView

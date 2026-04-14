@@ -12,4 +12,19 @@
         android:title="Settings"
         android:icon="@android:drawable/ic_menu_preferences"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_more"
+        android:title="More">
+
+        <menu>
+            <item
+                android:id="@+id/sub_about"
+                android:title="About" />
+            <item
+                android:id="@+id/sub_help"
+                android:title="Help" />
+        </menu>
+
+    </item>
 </menu>

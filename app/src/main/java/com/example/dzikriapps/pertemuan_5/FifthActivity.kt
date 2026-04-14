@@ -38,6 +38,7 @@ class FifthActivity : AppCompatActivity() {
             subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -58,6 +59,14 @@ class FifthActivity : AppCompatActivity() {
             }
             R.id.action_settings -> {
                 Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.sub_about -> {
+                Toast.makeText(this, "About Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.sub_help -> {
+                Toast.makeText(this, "About Clicked", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)

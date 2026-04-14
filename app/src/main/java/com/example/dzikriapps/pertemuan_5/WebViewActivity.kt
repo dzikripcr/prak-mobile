@@ -30,6 +30,7 @@ class WebViewActivity : AppCompatActivity() {
             title = "Web Detik"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         binding.webView.webViewClient = WebViewClient()
