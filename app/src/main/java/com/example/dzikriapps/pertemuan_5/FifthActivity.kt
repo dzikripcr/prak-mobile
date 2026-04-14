@@ -1,5 +1,6 @@
 package com.example.dzikriapps.pertemuan_5
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -24,6 +25,11 @@ class FifthActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        binding.btnWebView.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
         }
 
         setSupportActionBar(binding.toolbar)
@@ -58,5 +64,4 @@ class FifthActivity : AppCompatActivity() {
         }
 
     }
-
 }

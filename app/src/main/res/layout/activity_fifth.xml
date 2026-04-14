@@ -42,6 +42,12 @@
             android:orientation="vertical"
             android:gravity="center_horizontal">
 
+            <Button
+                android:id="@+id/btnWebView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
             <!-- Tambahkan konten panjang supaya bisa di-scroll -->
             <TextView
                 android:layout_width="match_parent"
