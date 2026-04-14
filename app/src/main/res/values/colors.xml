@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="identity">#1A80E0</color>
     <color name="hint">#858383</color>
+    <color name="colorAccent">#2196F3</color>
+
 </resources>

@@ -1,6 +1,9 @@
 package com.example.dzikriapps.pertemuan_5
 
 import android.os.Bundle
+import android.view.View
+import android.webkit.WebChromeClient
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +46,17 @@ class WebViewActivity : AppCompatActivity() {
                 binding.appBar.setExpanded(false, true) // sembunyikan
             } else if (scrollY < oldScrollY) {
                 binding.appBar.setExpanded(true, true) // tampilkan
+            }
+        }
+
+        binding.webView.webChromeClient = object : WebChromeClient() {
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                if (newProgress < 100) {
+                    binding.webProgressBar.progress = newProgress
+                    binding.webProgressBar.visibility = View.VISIBLE
+                } else {
+                    binding.webProgressBar.visibility = View.GONE
+                }
             }
         }
     }
