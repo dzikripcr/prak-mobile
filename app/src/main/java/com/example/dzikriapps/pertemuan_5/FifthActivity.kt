@@ -40,6 +40,9 @@ class FifthActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+        binding.btnTop.setOnClickListener {
+            binding.nestedScrollView.smoothScrollTo(0, 0)
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
