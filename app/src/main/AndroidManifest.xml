@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <!--Tambahkan permission di AndroidManifest.xml untuk mendapat izin akses internet-->
+    <!-- Tambahkan permission di AndroidManifest.xml untuk mendapat izin akses internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DzikriApps">
+        <activity
+            android:name=".pertemuan_5.FifthActivity"
+            android:exported="false" />
         <activity
             android:name=".pertemuan_5.WebViewActivity"
             android:exported="false" />
@@ -33,7 +35,7 @@
             android:name=".pertemuan_3.ThirdResultActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_5.FifthActivity"
+            android:name=".AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.Logout.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
+        }
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             title = "Activity Main"
