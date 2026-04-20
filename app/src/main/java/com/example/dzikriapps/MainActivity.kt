@@ -2,6 +2,7 @@ package com.example.dzikriapps
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.dzikriapps.databinding.ActivityMainBinding
 import com.example.dzikriapps.pertemuan_3.ThirdResultActivity
 import com.example.dzikriapps.pertemuan_4.FourthActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import androidx.core.content.edit
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +29,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        //Kode ini harus selalu dipanggil saat butuh akses dengan nama "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
 
@@ -38,8 +44,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.Logout.setOnClickListener {
-            val intent = Intent(this, AuthActivity::class.java)
-            startActivity(intent)
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    sharedPref.edit {
+                        clear()
+                    }
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
         }
 
         setSupportActionBar(binding.toolbar)

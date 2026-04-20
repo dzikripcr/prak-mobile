@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.dzikriapps.databinding.ActivityAuthBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import androidx.core.content.edit
 
 class AuthActivity : AppCompatActivity() {
 
@@ -25,12 +26,32 @@ class AuthActivity : AppCompatActivity() {
             insets
         }
 
+        //Kode ini harus selalu dipanggil saat butuh akses dengan nama "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        //Kondisi jika isLogin bernilai true
+//        val isLogin = sharedPref.getBoolean("isLogin", false)
+//        if (isLogin) {
+//            //Panggil Intent untuk ke MainActivity
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
+
         binding.btnLogin.setOnClickListener {
             val username = binding.username.text.toString()
             val password = binding.password.text.toString()
             if (username == password){
+
+                sharedPref.edit {
+                    putBoolean("isLogin", true)
+                    putString("username", username)
+                }
+
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finish()
+
             }else{
                 MaterialAlertDialogBuilder(this)
                     .setTitle("Gagal login")
