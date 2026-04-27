@@ -1,54 +1,63 @@
-package com.example.dzikriapps.pertemuan_3
+package com.example.dzikriapps.pertemuan_7
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.dzikriapps.R
-import com.example.dzikriapps.databinding.ActivityThirdBinding
+import com.example.dzikriapps.databinding.ActivitySeventhBinding
 
-class ThirdActivity : AppCompatActivity() {
+class SeventhActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityThirdBinding
+    private  lateinit var binding: ActivitySeventhBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        //inisialisasi binding
-        binding = ActivityThirdBinding.inflate(layoutInflater)
+        binding = ActivitySeventhBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //inisialisasi variabel setiap elemen
-//        val btnkirim: Button = findViewById(R.id.btnKirim)
-//        val noTujuan: EditText = findViewById(R.id.inputNoTujuan)
-
-        //buat button bisa dilik
-        binding.btnKirim.setOnClickListener {
-            //menampilkan pesan dalam bentuk Toast dengan menggunakan binding
-            val nomor = binding.inputNoTujuan.text
-            Toast.makeText(this, "Pesan berhasil dikirim ke $nomor", Toast.LENGTH_SHORT).show()
-
-            //pindah halaman dari ThirdActivity ke ThirdResultActivity
-            val intent = Intent(this, ThirdResultActivity::class.java)
-            startActivity(intent)
-        }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Activity Third"
-            subtitle = "Ini adalah activity P3"
+            title = "Seventh Activity"
+            subtitle = "Ini adalah Activity Seventh"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+
+        // Fragment pertama TANPA backstack
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, SatuFragment())
+            .commit()
+
+        // Setup event click untuk mengganti fragment
+        binding.btnFragment1.setOnClickListener {
+            replaceFragment(SatuFragment())
+        }
+
+        binding.btnFragment2.setOnClickListener {
+            replaceFragment(DuaFragment())
+        }
+
+        binding.btnFragment3.setOnClickListener {
+            replaceFragment(TigaFragment())
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

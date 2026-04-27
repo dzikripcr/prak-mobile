@@ -75,6 +75,7 @@ class FourthActivity : AppCompatActivity() {
             subtitle = "Ini adalah activity P4"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
     }
 

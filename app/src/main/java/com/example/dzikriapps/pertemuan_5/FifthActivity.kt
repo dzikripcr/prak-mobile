@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.dzikriapps.MainActivity
 import com.example.dzikriapps.R
 import com.example.dzikriapps.databinding.ActivityFifthBinding
 
@@ -46,6 +47,11 @@ class FifthActivity : AppCompatActivity() {
             } else {
                 supportActionBar?.title = "Activity Fifth"
             }
+        }
+
+        binding.btnWebView.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
         }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

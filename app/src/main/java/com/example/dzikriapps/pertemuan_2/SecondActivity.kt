@@ -46,6 +46,7 @@ class SecondActivity : AppCompatActivity() {
             subtitle = "Ini adalah activity P2"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
     }
 

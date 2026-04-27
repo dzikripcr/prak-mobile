@@ -13,6 +13,10 @@ import com.example.dzikriapps.pertemuan_3.ThirdResultActivity
 import com.example.dzikriapps.pertemuan_4.FourthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.core.content.edit
+import com.example.dzikriapps.pertemuan_2.SecondActivity
+import com.example.dzikriapps.pertemuan_3.ThirdActivity
+import com.example.dzikriapps.pertemuan_5.FifthActivity
+import com.example.dzikriapps.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +46,24 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+        binding.btnToSecond.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnToThird.setOnClickListener {
+            val intent = Intent(this, ThirdActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bbtnToFifth.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToSeventh.setOnClickListener {
+            val intent = Intent(this, SeventhActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.Logout.setOnClickListener {
             MaterialAlertDialogBuilder(this)
@@ -67,6 +89,7 @@ class MainActivity : AppCompatActivity() {
             subtitle = "Ini adalah Activity Main"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
     }
 
