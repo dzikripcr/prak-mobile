@@ -33,7 +33,7 @@ class SplashScreenActivity : AppCompatActivity() {
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
             //Panggil Intent untuk ke MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
             finish()
         }

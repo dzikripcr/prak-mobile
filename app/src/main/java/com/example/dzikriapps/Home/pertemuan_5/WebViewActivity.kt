@@ -1,4 +1,4 @@
-package com.example.dzikriapps.pertemuan_5
+package com.example.dzikriapps.Home.pertemuan_5
 
 import android.os.Bundle
 import android.view.View

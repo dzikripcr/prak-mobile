@@ -1,4 +1,4 @@
-package com.example.dzikriapps.pertemuan_7
+package com.example.dzikriapps.Home.pertemuan_7
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -56,7 +56,7 @@ class SeventhActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
-            .addToBackStack(null)
+//            .addToBackStack(null)
             .commit()
     }
 

@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_blue"
-    tools:context=".pertemuan_3.ThirdActivity">
+    android:background="#3D5426"
+    tools:context=".Home.pertemuan_3.ThirdActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

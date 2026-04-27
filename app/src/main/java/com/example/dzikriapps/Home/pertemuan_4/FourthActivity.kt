@@ -1,4 +1,4 @@
-package com.example.dzikriapps.pertemuan_4
+package com.example.dzikriapps.Home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.dzikriapps.MainActivity
 import com.example.dzikriapps.R
 import com.example.dzikriapps.databinding.ActivityFourthBinding
-import com.example.dzikriapps.databinding.ActivityThirdBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 

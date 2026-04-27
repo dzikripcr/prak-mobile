@@ -2,21 +2,19 @@ package com.example.dzikriapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.dzikriapps.databinding.ActivityMainBinding
-import com.example.dzikriapps.pertemuan_3.ThirdResultActivity
-import com.example.dzikriapps.pertemuan_4.FourthActivity
+import com.example.dzikriapps.Home.pertemuan_4.FourthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.core.content.edit
-import com.example.dzikriapps.pertemuan_2.SecondActivity
-import com.example.dzikriapps.pertemuan_3.ThirdActivity
-import com.example.dzikriapps.pertemuan_5.FifthActivity
-import com.example.dzikriapps.pertemuan_7.SeventhActivity
+import com.example.dzikriapps.Home.pertemuan_2.SecondActivity
+import com.example.dzikriapps.Home.pertemuan_3.ThirdActivity
+import com.example.dzikriapps.Home.pertemuan_5.FifthActivity
+import com.example.dzikriapps.Home.pertemuan_7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
 
