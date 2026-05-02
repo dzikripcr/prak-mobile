@@ -34,7 +34,11 @@ class SeventhActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        // Fragment pertama TANPA backstack
+        //Penggunaan fragment defaultnya kita hapus
+//        /** FragmentHome sebagai fragment default */
+//        replaceFragment(SatuFragment())
+
+        // Kita ganti dengan menggunakan fungsi beginTransaction
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, SatuFragment())
             .commit()
@@ -56,7 +60,7 @@ class SeventhActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
-//            .addToBackStack(null)
+            .addToBackStack(null)
             .commit()
     }
 
