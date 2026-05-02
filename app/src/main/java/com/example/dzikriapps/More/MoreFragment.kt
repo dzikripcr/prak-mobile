@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dzikriapps.R
 import com.example.dzikriapps.databinding.FragmentHomeBinding
+import com.example.dzikriapps.databinding.FragmentMoreBinding
 
 class MoreFragment : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentMoreBinding? = null
     private val binding get() = _binding!!
 
 
@@ -23,7 +24,7 @@ class MoreFragment : Fragment() {
         //return inflater.inflate(R.layout.fragment_message, container, false)
 
         /** Ganti menjadi versi binding */
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentMoreBinding.inflate(inflater, container, false)
         return binding.root
     }
 

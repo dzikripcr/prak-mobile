@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dzikriapps.R
-import com.example.dzikriapps.databinding.FragmentHomeBinding
+import com.example.dzikriapps.databinding.FragmentMessageBinding
 
 class MessageFragment : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentMessageBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,7 +22,7 @@ class MessageFragment : Fragment() {
         //return inflater.inflate(R.layout.fragment_message, container, false)
 
         /** Ganti menjadi versi binding */
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentMessageBinding.inflate(inflater, container, false)
         return binding.root
     }
 
