@@ -35,13 +35,13 @@ class SeventhActivity : AppCompatActivity() {
         }
 
         //Penggunaan fragment defaultnya kita hapus
-//        /** FragmentHome sebagai fragment default */
-//        replaceFragment(SatuFragment())
+        /** FragmentHome sebagai fragment default */
+        replaceFragment(SatuFragment())
 
-        // Kita ganti dengan menggunakan fungsi beginTransaction
-        supportFragmentManager.beginTransaction()
-            .replace(binding.fragmentContainer.id, SatuFragment())
-            .commit()
+//        // Kita ganti dengan menggunakan fungsi beginTransaction
+//        supportFragmentManager.beginTransaction()
+//            .replace(binding.fragmentContainer.id, SatuFragment())
+//            .commit()
 
         // Setup event click untuk mengganti fragment
         binding.btnFragment1.setOnClickListener {
