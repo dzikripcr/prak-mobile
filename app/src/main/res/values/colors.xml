@@ -5,5 +5,8 @@
     <color name="identity">#1A80E0</color>
     <color name="hint">#858383</color>
     <color name="colorAccent">#2196F3</color>
+    <color name="biru">#045299</color>
+    <color name="tab_icon_active">#000000</color>
+    <color name="tab_icon_inactive">#CC808080</color>
 
 </resources>
