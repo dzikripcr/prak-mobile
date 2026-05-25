@@ -13,7 +13,6 @@ import com.example.dzikriapps.databinding.FragmentHomeBinding
 import com.example.dzikriapps.databinding.FragmentTabCBinding
 
 class TabCFragment : Fragment() {
-
     private var _binding: FragmentTabCBinding? = null
     private val binding get() = _binding!!
     private val productList = listOf(
