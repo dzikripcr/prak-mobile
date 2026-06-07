@@ -42,7 +42,7 @@ class FragmentNote : Fragment() {
 //        super.onViewCreated(view, savedInstanceState)
         /** Inisialisasi AppDatabase & Adapter **/
         db = AppDatabase.getInstance(requireContext())
-        adapter = NoteAdapter(notes)
+        adapter = NoteAdapter(notes, this)
 
         binding.rvNotes.layoutManager = LinearLayoutManager(requireContext())
         binding.rvNotes.adapter = adapter
@@ -75,5 +75,12 @@ class FragmentNote : Fragment() {
     override fun onResume() {
         super.onResume()
         fetchNotes()
+    }
+
+    fun deleteNote(note: NoteEntity) {
+        lifecycleScope.launch {
+            db.noteDao().delete(note) //Hapus Note
+            fetchNotes()              //Fetch lagi data notes terbaru
+        }
     }
 }

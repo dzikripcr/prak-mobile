@@ -1,6 +1,7 @@
 package com.example.dzikriapps.data.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.dzikriapps.data.entity.NoteEntity
@@ -12,4 +13,7 @@ interface NoteDao {
 
     @Insert
     suspend fun insert(note: NoteEntity): Long
+
+    @Delete
+    suspend fun delete(note: NoteEntity): Int
 }
