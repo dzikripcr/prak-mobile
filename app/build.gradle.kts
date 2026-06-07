@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -58,4 +60,9 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     implementation("com.tbuonomo:dotsindicator:5.1.0")
+
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    ksp ("androidx.room:room-compiler:$room_version")
 }
