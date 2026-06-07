@@ -11,6 +11,7 @@ import com.example.dzikriapps.Home.HomeFragment
 import com.example.dzikriapps.Message.MessageFragment
 import com.example.dzikriapps.More.MoreFragment
 import com.example.dzikriapps.databinding.ActivityBaseBinding
+import com.example.dzikriapps.note.FragmentNote
 
 class BaseActivity : AppCompatActivity() {
 
@@ -34,6 +35,10 @@ class BaseActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> {
                     replaceFragment(HomeFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(FragmentNote())
                     true
                 }
                 R.id.message -> {

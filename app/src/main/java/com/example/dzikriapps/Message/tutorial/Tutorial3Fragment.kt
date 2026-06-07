@@ -1,10 +1,15 @@
 package com.example.dzikriapps.Message.tutorial
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.dzikriapps.BaseActivity
+import com.example.dzikriapps.Home.HomeFragment
+import com.example.dzikriapps.Home.pertemuan_7.SeventhActivity
+import com.example.dzikriapps.Message.MessageFragment
 import com.example.dzikriapps.R
 import com.example.dzikriapps.databinding.FragmentTutorial1Binding
 import com.example.dzikriapps.databinding.FragmentTutorial3Binding
@@ -26,6 +31,9 @@ class Tutorial3Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(view, savedInstanceState)
 
-
+        binding.btnToHome.setOnClickListener {
+            val intent = Intent(requireContext(), BaseActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
