@@ -1,5 +1,6 @@
 package com.example.dzikriapps.note
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,6 +32,10 @@ class FragmentNote : Fragment() {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Note"
+        }
+
+        binding.fabAddNote.setOnClickListener {
+            startActivity(Intent(requireContext(), NoteFormActivity::class.java))
         }
     }
 }

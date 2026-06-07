@@ -11,5 +11,5 @@ interface NoteDao {
     suspend fun getAll(): List<NoteEntity>
 
     @Insert
-    suspend fun insert(note: NoteEntity)
+    suspend fun insert(note: NoteEntity): Long
 }
